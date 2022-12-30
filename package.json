@@ -1,6 +1,6 @@
 {
   "name": "image2url",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Converts an image to a url using discord.js",
   "main": "index.js",
   "scripts": {
