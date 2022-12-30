@@ -24,9 +24,13 @@ const FileUpload = async (filePath, imageText) => {
         await client.login(Config_Token);
         if (!require('fs')) throw new Error('No fs module found , Did you install it?');
         fs.readFile(filePath, async (err, data) => {
-            if (filePath.endsWith('.jpg') || filePath.endsWith('.png')) {
-                imageText += `.${filePath.split('.').pop()}`;
+            const imageExtensions = /\.(jpe?g|png|gif|bmp)$/i;
+
+            if (imageExtensions.test(filePath)) {
+              const fileExtension = filePath.match(imageExtensions)[0];
+              imageText += fileExtension;
             }
+
             if (err)
                 return reject(err);
             await client.channels.fetch(Config_Channel).then(async (channel) => {
