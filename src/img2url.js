@@ -1,0 +1,68 @@
+// const { Client, GatewayIntentBits } = require('discord.js');
+// const fs = require('fs');
+
+
+// const client = new Client({
+//     intents: [
+//         GatewayIntentBits.Guilds,
+//         GatewayIntentBits.GuildMessages,
+//         GatewayIntentBits.MessageContent,
+//     ],
+// });
+
+let Config_Channel;
+let Config_Token;
+
+if (!require('discord.js')) throw new Error('No discord.js module found , Install it with npm i discord.js');
+if (!require('fs')) throw new Error('No fs module found , Did you install it?');
+
+const Client = require('discord.js').Client;
+
+const client = new Client({
+    intents: [
+        require('discord.js').GatewayIntentBits.Guilds,
+        require('discord.js').GatewayIntentBits.GuildMessages,
+        require('discord.js').GatewayIntentBits.MessageContent,
+    ],
+});
+
+const SetupInit = async ({ token, channel }) => {
+    if (!token) throw new Error('No token provided');
+    if (!channel) throw new Error('No channel provided');
+    Config_Channel = channel;
+    Config_Token = token;
+}
+
+const FileUpload = async (filePath, imageText) => {
+    return new Promise(async (resolve, reject) => {
+        await client.login(Config_Token);
+        if (!require('fs')) throw new Error('No fs module found , Did you install it?');
+        require('fs').readFile(filePath, async (err, data) => {
+            if (filePath.endsWith('.jpg') || filePath.endsWith('.png')) {
+                imageText += `.${filePath.split('.').pop()}`;
+            }
+            if (err)
+                return reject(err);
+            await client.channels.fetch(Config_Channel).then(async (channel) => {
+                await channel.send({
+                    files: [{
+                        attachment: data,
+                        name: imageText
+                    }],
+                    content: imageText
+                });
+            }).then(async () => {
+                console.log('File uploaded');
+                await client.channels.fetch(Config_Channel).then(async channel => {
+                    let msgs = await channel.messages.fetch({ limit: 2 });
+                    let url = msgs.first().attachments.first().url;
+                    resolve(url);
+                });
+            });
+        });
+
+    });
+}
+
+module.exports.init = SetupInit;
+module.exports.upload = FileUpload;

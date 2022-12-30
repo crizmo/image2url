@@ -1,0 +1,31 @@
+{
+  "name": "tourl",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crizmo/AnyAnime.git",
+    "homepage": "https://github.com/crizmo/AnyAnime/#README.md"
+  },
+  "keywords": [
+    "tourl",
+    "url",
+    "convert",
+    "discord",
+    "bot",
+    "discord.js",
+    "imagetourl", 
+    "image"
+  ],
+  "author": "Criz",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3",
+    "fs": "^0.0.1-security"
+  }
+}
