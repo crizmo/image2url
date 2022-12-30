@@ -7,7 +7,11 @@
   </a>
 
   <h3 align="center">Image2Url</h3>
-
+  <p align="center">
+    <a href="https://www.npmjs.com/package/image2url"><img src="https://img.shields.io/npm/v/image2url.svg?maxAge=3600&style=for-the-badge" alt="NPM version" /></a>
+    <a href="https://www.npmjs.com/package/image2url"><img src="https://img.shields.io/npm/dt/image2url?style=for-the-badge" /></a>
+    <a href="https://www.npmjs.com/package/image2url"><img src="https://img.shields.io/npm/l/image2url?style=for-the-badge" /></a>
+  </p>
   <p align="center">
     Convert images to urls
     <br />
@@ -72,6 +76,7 @@ The bot will then get the proxy url of the image and then return it to you. <br>
    ```JS
    const image2url = require('image2url');
    ```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Functions
 
