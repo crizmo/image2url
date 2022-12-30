@@ -6,7 +6,7 @@
     <img src="https://cdn.discordapp.com/attachments/910210865683386408/1058270655625314344/Untitled_design.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Image-to-Url</h3>
+  <h3 align="center">Image2Url</h3>
 
   <p align="center">
     Convert images to urls
@@ -33,7 +33,6 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href='#options'>Options</a></li>
         <li><a href="#functions">Functions</a></li>
         <li><a href="#usage">Usage</a></li>
       </ul>
@@ -65,36 +64,27 @@ The bot will then get the proxy url of the image and then return it to you. <br>
 5. Paste the channel id in the .env file named `DISCORD_CHANNEL`
 6. Check env_example file for more info - <a href="/tests/.env_example">env_example</a>
 7. Install the required packages - `discord.js, dotenv, fs`
-8. Install image-to-url using npm <br>
+8. Install image2url using npm <br>
    ```sh
-   npm install image-to-url
+   npm install image2url
    ```
 9. Require the package in your main file <br>
    ```JS
-   const tourl = require('image-to-url');
+   const image2url = require('image2url');
    ```
-
-## Options
-
-| **Options** | **Description**      | **Usage**          |
-| :---------: | -------------------- | ------------------ |
-|    init    | Setup token and channel . | `tourl.init({})` |
-|   upload   | Upload img and fetch url. | `tourl.upload()` |
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Functions
 
 ```javascript
 
-tourl.init({
+image2url.init({
     token: process.env.DISCORD_TOKEN,
     channel: process.env.DISCORD_CHANNEL
 });
 
 // Init function is used to setup the bot token and the channel id where the images will be sent
 
-tourl.upload('tests/kurizu.jpg', 'kurizu pfp').then(url => {
+image2url.upload('tests/kurizu.jpg', 'kurizu pfp').then(url => {
     console.log(url);
 });
 
@@ -107,15 +97,15 @@ Check env_example file for more info - <a href="/tests/.env_example">env_example
 ## Usage
 
 ```javascript
-const tourl = require('image-to-url');
+const image2url = require('image2url');
 require('dotenv').config()
 
-tourl.init({
+image2url.init({
     token: process.env.DISCORD_TOKEN,
     channel: process.env.DISCORD_CHANNEL
 });
 
-tourl.upload('tests/kurizu.jpg', 'kurizu pfp').then(url => {
+image2url.upload('tests/kurizu.jpg', 'kurizu pfp').then(url => {
     console.log(url);
 });
 ```

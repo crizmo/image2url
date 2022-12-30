@@ -19,7 +19,8 @@
     "bot",
     "discord.js",
     "imagetourl",
-    "image"
+    "image",
+    "image2url",
   ],
   "author": "Criz",
   "license": "ISC",
