@@ -85,6 +85,8 @@ The channel id of the channel where you want to send the images.
 - Embed Links <br>
 - Attach Files <br>
 
+Check env_example file for more info - <a href="/tests/.env_example">env_example</a>
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Prerequisites
