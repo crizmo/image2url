@@ -1,5 +1,5 @@
 {
-  "name": "img-2-url",
+  "name": "image-to-url",
   "version": "1.0.0",
   "description": "Image to Url",
   "main": "index.js",
