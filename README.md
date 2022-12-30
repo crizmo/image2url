@@ -65,20 +65,20 @@ The bot will then get the proxy url of the image and then return it to you. <br>
 5. Paste the channel id in the .env file named `DISCORD_CHANNEL`
 6. Check env_example file for more info - <a href="/tests/.env_example">env_example</a>
 7. Install the required packages - `discord.js, dotenv, fs`
-8. Install image-to-url using npm
+8. Install image-to-url using npm <br>
    ```sh
    npm install image-to-url
    ```
-9. Require the package in your main file
+9. Require the package in your main file <br>
    ```JS
-   const img2Url = require('image-to-url');
+   const tourl = require('image-to-url');
    ```
 
 ## Options
 
 | **Options** | **Description**      | **Usage**          |
 | :---------: | -------------------- | ------------------ |
-|    init    | Setup token and channel . | `img2url.init({})` |
+|    init    | Setup token and channel . | `tourl.init({})` |
 |   upload   | Upload img and fetch url. | `tourl.upload()` |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
