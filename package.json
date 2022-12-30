@@ -1,7 +1,7 @@
 {
   "name": "image2url",
   "version": "1.0.3",
-  "description": "Converts an image to a url using discord.js",
+  "description": "Converts image to url using discord.js",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
