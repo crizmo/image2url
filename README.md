@@ -30,13 +30,12 @@
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
+        <li><a href='#env-example'>Env Example</a></li>
+        <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
         <li><a href="#usage">Usage</a></li>
       </ul>
@@ -49,7 +48,6 @@
 </details>
 
 
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
@@ -58,43 +56,65 @@ Convert images to urls using discord bot.
 Images are sent to a discord channel that you specify. <br>
 The bot will then get the proxy url of the image and then return it to you. <br>
 
-
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+To use image to url you need to have the following:
+- Discord bot 
+- Discord server
+- Bot token
+- Channel id
+
+Once that is done set the following in the .env file <br>
+
+## Env Example
+DISCORD_TOKEN = "your token here" <br>
+The token of your bot. You can get it from https://discordapp.com/developers/applications/me <br><br>
+DISCORD_CHANNEL = "channel id here" <br>
+The channel id of the channel where you want to send the images.
+
+<h4>Make sure you have the following permissions on the channel:</h4>
+- Send Messages <br>
+- Embed Links <br>
+- Attach Files <br>
+
+<h4>Make sure to invite the bot to the server with the following permissions:</h4>
+- Send Messages <br>
+- Embed Links <br>
+- Attach Files <br>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+In order to run this project you need to have the following packages installed:
+- discord.js
+- dotenv
+- fs
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Installation
 
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Make a discord bot in discord developer portal
+2. Copy the token and paste it in the .env file named DISCORD_TOKEN
+3. Invite the bot to your server
+4. Get the channel id of the channel where you want to send the images
+5. Paste the channel id in the .env file named DISCORD_CHANNEL
+6. Install the required packages - discord.js, dotenv, fs
+7. Install image-to-url using npm
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   npm install image-to-url
    ```
-3. Install NPM packages
-   ```sh
-   npm install
+8. Require the package in your main file
+   ```JS
+   const imgToUrl = require('image-to-url');
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -103,24 +123,40 @@ _Below is an example of how you can instruct your audience on installing and set
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Example of how to use the package:
+```JS
+const tourl = require('image-to-url');
+require('dotenv').config()
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+tourl.init({
+    token: process.env.DISCORD_TOKEN,
+    channel: process.env.DISCORD_CHANNEL
+});
+
+tourl.upload('tests/kurizu.jpg', 'kurizu pfp').then(url => {
+    console.log(url);
+});
+``` 
+
+Note: 
+1. tests/kurizu.jpg is the path to the image you want to send. <br>
+2. kurizu pfp is the name of the image. <br>
+3. The url will have the name that you specified. which in this case is kurizu pfp. <br>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Add Changelog
-- [x] Add back to top links
+- [ ] Add Changelog
+- [ ] Add Tests
 - [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
+- [ ] Add Support for more image formats
+- [ ] Documentation
+    - [ ] Website
+    - [ ] Examples
+    - [ ] Wiki
+- [ ] Add Support for more platforms
 
 See the [open issues](https://github.com/crizmo/img-to-url/issues) for a full list of proposed features (and known issues).
 
@@ -158,8 +194,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Discord - ``Criz#1270`` <br>
+Github - [https://github.com/crizmo/img-to-url](https://github.com/crizmo/img-to-url)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
