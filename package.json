@@ -1,5 +1,5 @@
 {
-  "name": "image-to-url",
+  "name": "img-to-url",
   "version": "1.0.0",
   "description": "Image to Url",
   "main": "index.js",
@@ -8,8 +8,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/crizmo/AnyAnime.git",
-    "homepage": "https://github.com/crizmo/AnyAnime/#README.md"
+    "url": "https://github.com/crizmo/img-to-url.git",
+    "homepage": "https://github.com/crizmo/img-to-url#readme"
   },
   "keywords": [
     "tourl",
