@@ -2,7 +2,7 @@
 
 <br />
 <div align="center">
-  <a href="https://github.com/crizmo/img-to-url">
+  <a href="https://github.com/crizmo/image2url">
     <img src="https://cdn.discordapp.com/attachments/910210865683386408/1058270655625314344/Untitled_design.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -11,14 +11,14 @@
   <p align="center">
     Convert images to urls
     <br />
-    <a href="https://github.com/crizmo/img-to-url"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/crizmo/image2url"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/crizmo/img-to-url">View Demo</a>
+    <a href="https://github.com/crizmo/image2url">View Demo</a>
     ·
-    <a href="https://github.com/crizmo/img-to-url/issues">Report Bug</a>
+    <a href="https://github.com/crizmo/image2url/issues">Report Bug</a>
     ·
-    <a href="https://github.com/crizmo/img-to-url/issues">Request Feature</a>
+    <a href="https://github.com/crizmo/image2url/issues">Request Feature</a>
   </p>
 </div>
     
@@ -130,8 +130,8 @@ Note:
 
 ## For more information on how to use it visit
 
-- [Github](https://github.com/crizmo/img-to-url)
-- [Example](https://github.com/crizmo/img-to-url/tree/main/tests)
+- [Github](https://github.com/crizmo/image2url)
+- [Example](https://github.com/crizmo/image2url/tree/main/tests)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -147,7 +147,7 @@ Note:
     - [ ] Wiki
 - [ ] Add Support for more platforms
 
-See the [open issues](https://github.com/crizmo/img-to-url/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/crizmo/image2url/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -175,4 +175,4 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 Package Made by: `Criz#1270` <br>
-Github - [https://github.com/crizmo/img-to-url](https://github.com/crizmo/img-to-url)
+Github - [https://github.com/crizmo/image2url](https://github.com/crizmo/image2url)
