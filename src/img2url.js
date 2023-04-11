@@ -24,11 +24,17 @@ const FileUpload = async (filePath, imageText) => {
         await client.login(Config_Token);
         if (!require('fs')) throw new Error('No fs module found , Did you install it?');
         fs.readFile(filePath, async (err, data) => {
-            const imageExtensions = /\.(jpe?g|png|gif|bmp)$/i;
+            const imageExtensions = /\.(jpe?g|png|gif|mp4|webm)$/i;
 
             if (imageExtensions.test(filePath)) {
               const fileExtension = filePath.match(imageExtensions)[0];
               imageText += fileExtension;
+            } else {
+                return reject(new Error('Invalid image extension, only .jpg, .jpeg, .png, .gif, .mp4, .webm are allowed'));
+            }
+
+            if (data.length >= 8 * 1024 * 1024) {
+                return reject(new Error('Image is too big'));
             }
 
             if (err)

@@ -169,5 +169,5 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Contact
-Package Made by: `Criz#1270` <br>
+Package Made by: `Kurizu#1270` <br>
 Github - [https://github.com/crizmo/image2url](https://github.com/crizmo/image2url)

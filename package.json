@@ -22,7 +22,7 @@
     "image",
     "image2url"
   ],
-  "author": "Criz",
+  "author": "Kurizu",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^14.7.1",
