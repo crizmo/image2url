@@ -23,7 +23,7 @@
     "image2url"
   ],
   "author": "Kurizu",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "discord.js": "^14.7.1",
     "dotenv": "^16.0.3",
