@@ -52,15 +52,20 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Convert images to urls using discord bot. 
+Convert images to urls using discord bot / imgbb api <br>
 - How it works <br>
+For discord: <br>
 Images are sent to a discord channel that you specify. <br>
 The bot will then get the proxy url of the image and then return it to you. <br>
+
+For imgbb: <br>
+Images are sent to imgbb database and then the url is returned to you. <br>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Getting Started
 
+**For Discord** <br>
 1. Make a discord bot in discord developer portal
 2. Copy the token and paste it in the .env file named `DISCORD_TOKEN`
 3. Invite the bot to your server
@@ -78,22 +83,38 @@ The bot will then get the proxy url of the image and then return it to you. <br>
    ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+**For Imgbb** <br>
+1. Make an account on imgbb
+2. Get the api key from the dashboard
+3. Paste the api key in the .env file named `IMG_BB_KEY`
+4. Install the required packages - `axios, dotenv, fs, form-data`
+
 ## Functions
 
 ```javascript
+
+// Discord upload
 
 image2url.init({
     token: process.env.DISCORD_TOKEN,
     channel: process.env.DISCORD_CHANNEL
 });
 
-// Init function is used to setup the bot token and the channel id where the images will be sent
-
 image2url.upload('tests/kurizu.jpg', 'kurizu pfp').then(url => {
     console.log(url);
 });
 
-// Upload function uploads the image to the channel and then fetches its url
+
+// Imgbb upload
+const imagePath = 'tests/kurizu.jpg';
+
+image2url.imgbb_upload(imagePath, process.env.IMG_BB_KEY)
+    .then((url) => {
+        console.log('Image uploaded successfully. URL:', url);
+    })
+    .catch((error) => {
+        console.error('Image upload failed with error:', error);
+    });
 ```
 Check env_example file for more info - <a href="/tests/.env_example">env_example</a>
 
@@ -105,6 +126,8 @@ Check env_example file for more info - <a href="/tests/.env_example">env_example
 const image2url = require('image2url');
 require('dotenv').config()
 
+// Discord upload
+
 image2url.init({
     token: process.env.DISCORD_TOKEN,
     channel: process.env.DISCORD_CHANNEL
@@ -113,6 +136,18 @@ image2url.init({
 image2url.upload('tests/kurizu.jpg', 'kurizu pfp').then(url => {
     console.log(url);
 });
+
+
+// Imgbb upload
+const imagePath = 'tests/kurizu.jpg';
+
+image2url.imgbb_upload(imagePath, process.env.IMG_BB_KEY)
+    .then((url) => {
+        console.log('Image uploaded successfully. URL:', url);
+    })
+    .catch((error) => {
+        console.error('Image upload failed with error:', error);
+    });
 ```
 
 Note: 
